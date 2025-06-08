@@ -18,7 +18,7 @@ import {
     FaMediumM,
 } from 'react-icons/fa';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
-import { FiPhone, FiAtSign } from 'react-icons/fi';
+import { FiPhone, FiAtSign, FiMail } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -107,12 +107,14 @@ function Contacts() {
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: '23px',
-        transition: '250ms ease-in-out',
+        transition: 'all 0.3s ease-in-out',
         flexShrink: 0,
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
         '&:hover': {
-            transform: 'scale(1.1)',
-            color: theme.secondary,
+            transform: 'translateY(-5px)',
+            boxShadow: '0px 7px 15px rgba(0, 0, 0, 0.3)',
             backgroundColor: theme.tertiary,
+            color: theme.secondary,
         },
     }));
 
@@ -139,7 +141,7 @@ function Contacts() {
                 };
 
                 axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
+                    // console.log('success');
                     setSuccess(true);
                     setErrMsg('');
 
@@ -260,33 +262,87 @@ function Contacts() {
                     </div>
 
                     <div className='contacts-details'>
+
                         <a
                             href={`mailto:${contactsData.email}`}
                             className='personal-details'
+                            style={{
+                                color: theme.tertiary,
+                                textDecoration: 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1.5rem',
+                                width: '100%',
+                                marginBottom: '2.5rem'
+                            }}
                         >
                             <div className={DetailsIcon}>
-                                <FiAtSign />
+                                <FiMail />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
+                            <p style={{ 
+                                color: theme.tertiary,
+                                fontSize: '18px',
+                                lineHeight: '110%',
+                                fontWeight: 500,
+                                fontFamily: 'var(--primaryFont)',
+                                width: '45%',
+                                wordBreak: 'break-word',
+                                margin: 0
+                            }}>
                                 {contactsData.email}
                             </p>
                         </a>
                         <a
                             href={`tel:${contactsData.phone}`}
                             className='personal-details'
+                            style={{
+                                color: theme.tertiary,
+                                textDecoration: 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1.5rem',
+                                width: '100%',
+                                marginBottom: '2.5rem'
+                            }}
                         >
                             <div className={DetailsIcon}>
                                 <FiPhone />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
+                            <p style={{ 
+                                color: theme.tertiary,
+                                fontSize: '18px',
+                                lineHeight: '110%',
+                                fontWeight: 500,
+                                fontFamily: 'var(--primaryFont)',
+                                width: '45%',
+                                wordBreak: 'break-word',
+                                margin: 0
+                            }}>
                                 {contactsData.phone}
                             </p>
                         </a>
-                        <div className='personal-details'>
+                        <div className='personal-details'
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1.5rem',
+                                width: '100%',
+                                marginBottom: '2.5rem'
+                            }}
+                        >
                             <div className={DetailsIcon}>
                                 <HiOutlineLocationMarker />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
+                            <p style={{ 
+                                color: theme.tertiary,
+                                fontSize: '18px',
+                                lineHeight: '110%',
+                                fontWeight: 500,
+                                fontFamily: 'var(--primaryFont)',
+                                width: '45%',
+                                wordBreak: 'break-word',
+                                margin: 0
+                            }}>
                                 {contactsData.address}
                             </p>
                         </div>

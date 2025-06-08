@@ -1,23 +1,30 @@
 export const experienceData = [
     {
         id: 1,
-        company: 'Globex Corporation',
-        jobtitle: 'Frontend Developer',
-        startYear: '2018',
-        endYear: '2019'
+        company: 'KeY2Moon Solutions',
+        jobtitle: 'Full Stack Engineer',
+        startYear: 'Feb 2023',
+        endYear: 'Present'
     },
     {
         id: 2,
-        company: 'Vehement Capital Partners',
-        jobtitle: 'Backend Developer',
-        startYear: '2019',
-        endYear: '2020'
+        company: 'BEPRO',
+        jobtitle: 'Full Stack Engineer',
+        startYear: 'Jan 2021',
+        endYear: 'May 2023'
     },
     {
         id: 3,
-        company: 'Wonka Industries',
-        jobtitle: 'Marketing',
-        startYear: '2020',
-        endYear: 'Present'
+        company: 'Zapier',
+        jobtitle: 'Full Stack Engineer',
+        startYear: 'Feb 2018',
+        endYear: 'Jan 2021'
+    },
+    {
+        id: 4,
+        company: 'Reddit, Inc',
+        jobtitle: 'Full Stack Engineer',
+        startYear: 'Jul 2014',
+        endYear: 'Oct 2017'
     },
 ]
