@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 import { ThemeContext } from './contexts/ThemeContext';
 import { Main, BlogPage, ProjectPage } from './pages'
@@ -17,19 +18,20 @@ function App() {
   // console.log = console.warn = console.error = () => {};
 
   return (
-    <div className="app">
-      <Router>
-        <ScrollToTop/>
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/blog" exact component={BlogPage} />
-          <Route path="/projects" exact component={ProjectPage} />
-
-          <Redirect to="/" />
-        </Switch>
-      </Router>
-      <BackToTop />
-    </div>
+    <HelmetProvider>
+      <div className="app">
+        <Router>
+          <ScrollToTop/>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/projects" element={<ProjectPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Router>
+        <BackToTop />
+      </div>
+    </HelmetProvider>
   );
 }
 

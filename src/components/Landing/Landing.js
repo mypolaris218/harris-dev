@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
 
 import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -19,53 +19,50 @@ import {
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
 
-    const useStyles = makeStyles((t) => ({
-        resumeBtn: {
-            color: theme.primary,
-            borderRadius: '30px',
-            textTransform: 'inherit',
-            textDecoration: 'none',
-            width: '150px',
-            fontSize: '1rem',
-            fontWeight: '500',
-            height: '50px',
-            fontFamily: 'var(--primaryFont)',
-            border: `3px solid ${theme.primary}`,
-            transition: '100ms ease-out',
-            '&:hover': {
-                backgroundColor: theme.tertiary,
-                color: theme.secondary,
-                border: `3px solid ${theme.tertiary}`,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '180px',
-            },
-        },
-        contactBtn: {
-            backgroundColor: theme.primary,
+    const ResumeButton = styled(Button)(({ theme: muiTheme }) => ({
+        color: theme.primary,
+        borderRadius: '30px',
+        textTransform: 'inherit',
+        textDecoration: 'none',
+        width: '150px',
+        fontSize: '1rem',
+        fontWeight: '500',
+        height: '50px',
+        fontFamily: 'var(--primaryFont)',
+        border: `3px solid ${theme.primary}`,
+        transition: '100ms ease-out',
+        '&:hover': {
+            backgroundColor: theme.tertiary,
             color: theme.secondary,
-            borderRadius: '30px',
-            textTransform: 'inherit',
-            textDecoration: 'none',
-            width: '150px',
-            height: '50px',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'var(--primaryFont)',
-            border: `3px solid ${theme.primary}`,
-            transition: '100ms ease-out',
-            '&:hover': {
-                backgroundColor: theme.secondary,
-                color: theme.tertiary,
-                border: `3px solid ${theme.tertiary}`,
-            },
-            [t.breakpoints.down('sm')]: {
-                display: 'none',
-            },
+            border: `3px solid ${theme.tertiary}`,
+        },
+        '@media (max-width: 600px)': {
+            width: '180px',
         },
     }));
 
-    const classes = useStyles();
+    const ContactButton = styled(Button)(({ theme: muiTheme }) => ({
+        backgroundColor: theme.primary,
+        color: theme.secondary,
+        borderRadius: '30px',
+        textTransform: 'inherit',
+        textDecoration: 'none',
+        width: '150px',
+        height: '50px',
+        fontSize: '1rem',
+        fontWeight: '500',
+        fontFamily: 'var(--primaryFont)',
+        border: `3px solid ${theme.primary}`,
+        transition: '100ms ease-out',
+        '&:hover': {
+            backgroundColor: theme.secondary,
+            color: theme.tertiary,
+            border: `3px solid ${theme.tertiary}`,
+        },
+        '@media (max-width: 600px)': {
+            display: 'none',
+        },
+    }));
 
     return (
         <div className='landing'>
@@ -171,9 +168,9 @@ function Landing() {
                                     target='_blank'
                                     rel='noreferrer'
                                 >
-                                    <Button className={classes.resumeBtn}>
+                                    <ResumeButton>
                                         Download CV
-                                    </Button>
+                                    </ResumeButton>
                                 </a>
                             )}
                             <NavLink
@@ -182,9 +179,9 @@ function Landing() {
                                 spy='true'
                                 duration={2000}
                             >
-                                <Button className={classes.contactBtn}>
+                                <ContactButton>
                                     Contact
-                                </Button>
+                                </ContactButton>
                             </NavLink>
                         </div>
                     </div>
