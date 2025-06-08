@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import Fade from 'react-reveal/Fade';
+import { motion, AnimatePresence } from 'framer-motion';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
 import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
 import { FaUser, FaFolderOpen } from 'react-icons/fa';
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CloseIcon from '@material-ui/icons/Close';
+import { styled } from '@mui/material/styles';
+import Drawer from '@mui/material/Drawer';
+import CloseIcon from '@mui/icons-material/Close';
 
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
@@ -16,7 +16,6 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
     const { theme, setHandleDrawer } = useContext(ThemeContext);
-
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -29,98 +28,101 @@ function Navbar() {
         setHandleDrawer();
     };
 
-    const useStyles = makeStyles((t) => ({
-        navMenu: {
-            fontSize: '2.5rem',
-            color: theme.tertiary,
-            cursor: 'pointer',
-            transform: 'translateY(-10px)',
-            transition: 'color 0.3s',
-            '&:hover': {
-                color: theme.primary,
-            },
-            [t.breakpoints.down('sm')]: {
-                fontSize: '2.5rem',
-            },
-            [t.breakpoints.down('xs')]: {
-                fontSize: '2rem',
-            },
+    const NavMenuIcon = styled(IoMenuSharp)(({ theme: muiTheme }) => ({
+        fontSize: '2.5rem',
+        color: theme.tertiary,
+        cursor: 'pointer',
+        transform: 'translateY(-10px)',
+        transition: 'color 0.3s',
+        '&:hover': {
+            color: theme.primary,
         },
-        MuiDrawer: {
+        '@media (max-width: 960px)': {
+            fontSize: '2.5rem',
+        },
+        '@media (max-width: 600px)': {
+            fontSize: '2rem',
+        },
+    }));
+
+    const StyledDrawer = styled(Drawer)(({ theme: muiTheme }) => ({
+        '& .MuiDrawer-paper': {
             padding: '0em 1.8em',
             width: '14em',
-            fontFamily: ' var(--primaryFont)',
-            fontStyle: ' normal',
-            fontWeight: ' normal',
-            fontSize: ' 24px',
+            fontFamily: 'var(--primaryFont)',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            fontSize: '24px',
             background: theme.secondary,
             overflow: 'hidden',
             borderTopRightRadius: '40px',
             borderBottomRightRadius: '40px',
-            [t.breakpoints.down('sm')]: {
+            '@media (max-width: 960px)': {
                 width: '12em',
-            },
-        },
-        closebtnIcon: {
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            color: theme.primary,
-            position: 'absolute',
-            right: 40,
-            top: 40,
-            transition: 'color 0.2s',
-            '&:hover': {
-                color: theme.tertiary,
-            },
-            [t.breakpoints.down('sm')]: {
-                right: 20,
-                top: 20,
-            },
-        },
-        drawerItem: {
-            margin: '2rem auto',
-            borderRadius: '78.8418px',
-            background: theme.secondary,
-            color: theme.primary,
-            width: '85%',
-            height: '60px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            padding: '0 30px',
-            boxSizing: 'border-box',
-            border: '2px solid',
-            borderColor: theme.primary,
-            transition: 'background-color 0.2s, color 0.2s',
-            '&:hover': {
-                background: theme.primary,
-                color: theme.secondary,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '100%',
-                padding: '0 25px',
-                height: '55px',
-            },
-        },
-        drawerLinks: {
-            fontFamily: 'var(--primaryFont)',
-            width: '50%',
-            fontSize: '1.3rem',
-            fontWeight: 600,
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.125rem',
-            },
-        },
-        drawerIcon: {
-            fontSize: '1.6rem',
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.385rem',
             },
         },
     }));
 
-    const classes = useStyles();
+    const CloseButton = styled(CloseIcon)(({ theme: muiTheme }) => ({
+        fontSize: '2rem',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        color: theme.primary,
+        position: 'absolute',
+        right: 40,
+        top: 40,
+        transition: 'color 0.2s',
+        '&:hover': {
+            color: theme.tertiary,
+        },
+        '@media (max-width: 960px)': {
+            right: 20,
+            top: 20,
+        },
+    }));
+
+    const DrawerItem = styled('div')(({ theme: muiTheme }) => ({
+        margin: '2rem auto',
+        borderRadius: '78.8418px',
+        background: theme.secondary,
+        color: theme.primary,
+        width: '85%',
+        height: '60px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        padding: '0 30px',
+        boxSizing: 'border-box',
+        border: '2px solid',
+        borderColor: theme.primary,
+        transition: 'background-color 0.2s, color 0.2s',
+        '&:hover': {
+            background: theme.primary,
+            color: theme.secondary,
+        },
+        '@media (max-width: 960px)': {
+            width: '100%',
+            padding: '0 25px',
+            height: '55px',
+        },
+    }));
+
+    const DrawerLink = styled('span')(({ theme: muiTheme }) => ({
+        fontFamily: 'var(--primaryFont)',
+        width: '50%',
+        fontSize: '1.3rem',
+        fontWeight: 600,
+        '@media (max-width: 960px)': {
+            fontSize: '1.125rem',
+        },
+    }));
+
+    const DrawerIcon = styled('span')(({ theme: muiTheme }) => ({
+        fontSize: '1.6rem',
+        '@media (max-width: 960px)': {
+            fontSize: '1.385rem',
+        },
+    }));
 
     const shortname = (name) => {
         if (name.length > 12) {
@@ -130,6 +132,12 @@ function Navbar() {
         }
     };
 
+    const MotionNavLink = motion(NavLink);
+    const navItemVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 }
+    };
+
     return (
         <div className='navbar'>
             <div className='navbar--container'>
@@ -137,13 +145,12 @@ function Navbar() {
                     {shortname(headerData.name)}
                 </h1>
 
-                <IoMenuSharp
-                    className={classes.navMenu}
+                <NavMenuIcon
                     onClick={handleDrawerOpen}
                     aria-label='Menu'
                 />
             </div>
-            <Drawer
+            <StyledDrawer
                 variant='temporary'
                 onClose={(event, reason) => {
                     if (reason !== 'backdropClick') {
@@ -154,12 +161,11 @@ function Navbar() {
                 }}
                 anchor='left'
                 open={open}
-                classes={{ paper: classes.MuiDrawer }}
                 className='drawer'
                 disableScrollLock={true}
             >
                 <div className='div-closebtn'>
-                    <CloseIcon
+                    <CloseButton
                         onClick={handleDrawerClose}
                         onKeyDown={(e) => {
                             if (e.key === ' ' || e.key === 'Enter') {
@@ -167,7 +173,6 @@ function Navbar() {
                                 handleDrawerClose();
                             }
                         }}
-                        className={classes.closebtnIcon}
                         role='button'
                         tabIndex='0'
                         aria-label='Close'
@@ -177,112 +182,130 @@ function Navbar() {
 
                 <div onClick={handleDrawerClose}>
                     <div className='navLink--container'>
-                        <Fade left>
-                            <NavLink
+                        <AnimatePresence>
+                            <MotionNavLink
                                 to='/'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.1 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <IoHomeSharp
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <IoHomeSharp />
+                                    </DrawerIcon>
+                                    <DrawerLink>
                                         Home
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
 
-                        <Fade left>
-                            <NavLink
+                            <MotionNavLink
                                 to='/#about'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.2 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <FaUser className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <FaUser />
+                                    </DrawerIcon>
+                                    <DrawerLink>
                                         About
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
 
-                        <Fade left>
-                            <NavLink
+                            <MotionNavLink
                                 to='/#resume'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.3 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <HiDocumentText
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <HiDocumentText />
+                                    </DrawerIcon>
+                                    <DrawerLink>
                                         Resume
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
 
-                        <Fade left>
-                            <NavLink
+                            <MotionNavLink
                                 to='/#services'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.4 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <BsFillGearFill
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <BsFillGearFill />
+                                    </DrawerIcon>
+                                    <DrawerLink>
                                         Services
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
 
-                        <Fade left>
-                            <NavLink
-                                to='/#blog'
+                            <MotionNavLink
+                                to='/#projects'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.5 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <FaFolderOpen
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Blog
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <FaFolderOpen />
+                                    </DrawerIcon>
+                                    <DrawerLink>
+                                        Projects
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
 
-                        <Fade left>
-                            <NavLink
+                            <MotionNavLink
                                 to='/#contacts'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
+                                variants={navItemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.6 }}
                             >
-                                <div className={classes.drawerItem}>
-                                    <MdPhone className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
+                                <DrawerItem>
+                                    <DrawerIcon>
+                                        <MdPhone />
+                                    </DrawerIcon>
+                                    <DrawerLink>
                                         Contact
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
+                                    </DrawerLink>
+                                </DrawerItem>
+                            </MotionNavLink>
+                        </AnimatePresence>
                     </div>
                 </div>
-            </Drawer>
+            </StyledDrawer>
         </div>
     );
 }

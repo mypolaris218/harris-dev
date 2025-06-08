@@ -75,7 +75,6 @@ import wolframalpha from '../assets/svg/skills/wolframalpha.svg'
 
 import canva from '../assets/svg/skills/canva.svg'
 
-
 export const skillsImage = (skill) => {
     const skillID = skill.toLowerCase();
     switch (skillID) {
