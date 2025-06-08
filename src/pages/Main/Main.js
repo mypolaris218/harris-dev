@@ -10,7 +10,6 @@ function Main() {
             <Helmet>
                 <title>{headerData.name} - Portfolio</title>
             </Helmet>
-
             <Navbar />        
             <Landing />
             <About />
@@ -18,10 +17,10 @@ function Main() {
             <Skills />
             <Experience />
             <Projects />
-            <Achievement />
-            <Services />
+            {/* <Achievement /> */}
+            {/* <Services /> */}
             <Testimonials />
-            <Blog />
+            {/* <Blog /> */}
             <Contacts />
             <Footer />
         </div>
