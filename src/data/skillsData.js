@@ -1,4 +1,4 @@
- export const languages = [
+const languages = [
     "C/C++",
     "MFC",
     "Java",
@@ -11,7 +11,7 @@
     "Ruby"
  ];
 
- export const frontend = [
+ const frontend = [
     "React",
     "Next.js",
     "Gatsby",
@@ -31,7 +31,7 @@
     "NgRx",
  ]
 
- export const mobile = [
+const mobile = [
     "Android",
     "iOS",
     "Android Studio",
@@ -43,7 +43,7 @@
     "Flutter",
  ]
 
- export const backend = [
+ const backend = [
     "Node.js",
     "Express",
     "NestJS",
@@ -59,7 +59,7 @@
     "Ruby on Rails"
  ]
 
- export const database = [
+ const database = [
     "MySQL",
     "PostgreSQL",
     "Oracle",
@@ -74,15 +74,17 @@
     "Firestore"
  ]
 
- export const cssFrameworks = [
+ const cssFrameworks = [
     "Bootstrap",
     "Tailwind",
     "Ant Design",
     "Bulma",
     "PostCSS",
+    "SCSS",
+    "LESS"
  ]
 
- export const infrastructure = [
+ const infrastructure = [
     "AWS",
     "GCP",
     "Azure",
@@ -92,7 +94,7 @@
     "Firebase",
  ]
 
- export const devOpsAutomation = [
+ const devOpsAutomation = [
     "Terraform",
     "CloudFormation",
     "Azure Bicep",
@@ -107,13 +109,25 @@
     "Azure Monitor"
  ]
 
- export const messagingEventStreaming = [
+ const messagingEventStreaming = [
     "Kafka",
     "RabbitMQ",
     "AWS SQS/SNS",
     "Google Pub/Sub",
     "Azure Service Bus",
  ]
+
+ export const skillCategories = [
+    { title: 'Languages', data: languages },
+    { title: 'Frontend', data: frontend },
+    { title: 'Backend', data: backend },
+    { title: 'Database', data: database },
+    { title: 'Mobile', data: mobile },
+    { title: 'CSS Frameworks', data: cssFrameworks },
+    { title: 'Infrastructure', data: infrastructure },
+    { title: 'DevOps & Automation', data: devOpsAutomation },
+    { title: 'Messaging/Event Streaming', data: messagingEventStreaming }
+];
 
  export const skillsData = [
     'HTML',

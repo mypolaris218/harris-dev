@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import Marquee from "react-fast-marquee";
-import { Box, Typography, Card, CardContent } from '@mui/material';
+import { Box, Typography, Card, CardContent, Chip, Avatar, Grid } from '@mui/material';
 
 import './Skills.css'
 
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { skillsData } from '../../data/skillsData'
+import { skillCategories } from '../../data/skillsData'
 import { skillsImage } from '../../utils/skillsImage'
 
 function Skills() {
@@ -30,28 +30,42 @@ function Skills() {
                 </Typography>
             </Box>
             <Box className="skillsContainer">
-                <Box className="skill--scroll">
-                    <Marquee 
-                        gradient={false} 
-                        speed={80} 
-                        pauseOnHover={true}
-                        pauseOnClick={true} 
-                        delay={0}
-                        play={true} 
-                        direction="left"
-                    >
-                        {skillsData.map((skill, id) => (
-                            <Card className="skill--box" key={id} sx={skillBoxStyle} elevation={0}>
-                                <CardContent className="skill-card-content">
-                                    <img src={skillsImage(skill)} alt={skill} />
-                                    <h3 style={{ color: theme.tertiary }}>
-                                        {skill}
-                                    </h3>
-                                </CardContent>
-                            </Card>
+                <Marquee 
+                    gradient={false} 
+                    speed={80} 
+                    pauseOnHover={true}
+                    pauseOnClick={true} 
+                    delay={0}
+                    play={true} 
+                    direction="left"
+                >
+                    <Grid container spacing={2} wrap="nowrap" alignItems="stretch" sx={{ py: 2, px: 1 }}>
+                        {skillCategories.map(category => (
+                            <Grid item key={category.title}>
+                                <Card sx={{ ...skillBoxStyle, width: 300, height: '100%' }} elevation={0}>
+                                    <CardContent sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                        <Typography variant='h5' component='div' className="skill-card-title" sx={{ color: theme.tertiary }}>
+                                            {category.title}
+                                        </Typography>
+                                        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+                                            <Grid container spacing={1} sx={{ p: 1 }}>
+                                                {category.data.map(skill => (
+                                                    <Grid item size={6} xs={6} key={skill} sx={{ justifyContent: "center", alignItems: "center"}}>
+                                                        <Chip 
+                                                            label={skill} 
+                                                            avatar={<Avatar src={skillsImage(skill)} alt={skill} />}
+                                                            sx={{ width: '80%', justifyContent: 'flex-start' }}
+                                                        />
+                                                    </Grid>
+                                                ))}
+                                            </Grid>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
                         ))}
-                    </Marquee>
-                </Box>
+                    </Grid>
+                </Marquee>
             </Box>
         </Box>
     )
