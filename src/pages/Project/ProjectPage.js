@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { styled } from '@mui/material/styles';
 import { AiOutlineHome } from "react-icons/ai";
@@ -83,7 +82,7 @@ function ProjectPage() {
                    />
                </div>
                <div className="project-container">
-                   <Grid className="project-grid" container direction="row" alignItems="center" justifyContent="center">
+                   <div className="project-grid">
                         {filteredArticles.map(project => (
                             <SingleProject
                                 theme={theme}
@@ -97,7 +96,7 @@ function ProjectPage() {
                                 image={project.image} 
                             />
                         ))}
-                   </Grid>
+                   </div>
                </div>
            </div>    
         </div>

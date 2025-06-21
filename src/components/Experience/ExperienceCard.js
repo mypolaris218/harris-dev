@@ -29,7 +29,7 @@ function ExperienceCard({id, company, jobtitle, startYear, endYear}) {
             transition={{ duration: 0.5 }}
         >
             <div className="expcard-img" style={{backgroundColor: theme.primary}}>
-                <img src={theme.type === 'light' ? expImgBlack : expImgWhite} alt="" />
+                <img src={expImgWhite} alt="" />
             </div>
             <div className="experience-details">
                 <h6 style={{color: theme.primary}}>{startYear}-{endYear}</h6>

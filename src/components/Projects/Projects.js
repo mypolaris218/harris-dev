@@ -1,19 +1,18 @@
 import React,{ useContext} from 'react';
 import { Link } from 'react-router-dom'
-import { styled } from '@mui/material/styles';
+import { Box, Typography, Grid, styled } from '@mui/material';
+import { HiArrowRight } from "react-icons/hi";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
-import { HiArrowRight } from "react-icons/hi";
-
-import './Projects.css'
 import SingleProject from './SingleProject/SingleProject';
+import './Projects.css'
 
 function Projects() {
     const { theme } = useContext(ThemeContext);
 
     const ViewAllButton = styled('button')(({ theme: muiTheme }) => ({
-        color: theme.tertiary, 
+        color: theme.secondary70, 
         backgroundColor: theme.primary,
         transition: 'color 0.2s',
         "&:hover": {
@@ -41,16 +40,18 @@ function Projects() {
     return (
         <>
             {projectsData.length > 0 && (
-                <div className="projects" id="projects" style={{backgroundColor: theme.secondary}}>
-                    <div className="projects--header">
-                        <h1 style={{color: theme.primary}}>Projects</h1>
-                    </div>
-                    <div className="projects--body">
-                        <div className="projects--bodyContainer">
-                            {projectsData.slice(0, 3).map(project => (
+                <Box className="projects" id="projects" sx={{ backgroundColor: theme.secondary }}>
+                    <Box className="projects--header">
+                        <Typography variant="h1" sx={{ color: theme.primary }}>
+                            Projects
+                        </Typography>
+                    </Box>
+
+                    <Grid container spacing={5} className="projects--bodyContainer">
+                        {projectsData.slice(0, 4).map(project => (
+                            <Grid item xs={12} sm={12} md={6} lg={4} key={project.id}>
                                 <SingleProject
                                     theme={theme}
-                                    key={project.id}
                                     id={project.id}
                                     name={project.projectName}
                                     desc={project.projectDesc}
@@ -59,21 +60,21 @@ function Projects() {
                                     demo={project.demo}
                                     image={project.image}
                                 />
-                            ))}
-                        </div> 
+                            </Grid>
+                        ))}
+                    </Grid>
 
-                        {projectsData.length > 3 && (
-                            <div className="projects--viewAll">
-                                <Link to="/projects">
-                                    <ViewAllButton>
-                                        View All
-                                        <ViewArrow />
-                                    </ViewAllButton>
-                                </Link>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                    {projectsData.length > 3 && (
+                        <Box className="projects--viewAll">
+                            <Link to="/projects">
+                                <ViewAllButton>
+                                    View All
+                                    <ViewArrow />
+                                </ViewAllButton>
+                            </Link>
+                        </Box>
+                    )}
+                </Box>
             )}
         </>
     )

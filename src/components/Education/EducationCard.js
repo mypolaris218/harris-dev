@@ -28,7 +28,7 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
             transition={{ duration: 0.5 }}
         >
             <div className="educard-img" style={{backgroundColor: theme.primary}}>
-                <img src={theme.type === 'light' ? eduImgBlack : eduImgWhite} alt="" />
+                <img src={eduImgWhite} alt="" />
             </div>
             <div className="education-details">
                 <h6 style={{color: theme.primary}}>{startYear}-{endYear}</h6>

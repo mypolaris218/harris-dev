@@ -22,6 +22,7 @@
     margin-bottom: 40px;
     font-size: 3.5rem;
     font-family: var(--primaryFont);
+    font-weight: bold;
 }
 
 .projects--body {
@@ -33,11 +34,10 @@
 }
 
 .projects--bodyContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4.5rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects--viewAll {
@@ -74,13 +74,7 @@
 
 
 @media screen and (max-width: 992px) {
-    .projects--bodyContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
+    /* Grid handles this now, but we can add more specific overrides if needed */
 }
 
 @media screen and (max-width: 800px) {
@@ -96,13 +90,7 @@
         margin-bottom: 20px;
     }
     .projects--viewAll {
-        position: relative;
-        margin-top: 4rem;
-    }
-    .projects--viewAll a {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);  
+        justify-content: center;
     }
 }
 
