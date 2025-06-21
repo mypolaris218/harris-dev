@@ -1,3 +1,134 @@
+const languages = [
+    "C/C++",
+    "MFC",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "PHP",
+    "C#",
+    "Go",
+    "Ruby"
+ ];
+
+ const frontend = [
+    "React",
+    "Next.js",
+    "Gatsby",
+    "Angular",
+    "Vue",
+    "Ember",
+    "Lit",
+    "Svelte",
+    "Redux",
+    "Mobx",
+    "Zustand",
+    "Context",
+    "React Hooks",
+    "VueX",
+    "Vuetify",
+    "RxJS",
+    "NgRx",
+ ]
+
+const mobile = [
+    "Android",
+    "iOS",
+    "Android Studio",
+    "Xcode",
+    "Objective-C",
+    "Swift",
+    "Kotlin",
+    "React Native",
+    "Flutter",
+ ]
+
+ const backend = [
+    "Node.js",
+    "Express",
+    "NestJS",
+    "Fastify",
+    "Django",
+    "Flask",
+    "FastAPI",
+    "Laravel",
+    "Symfony",
+    "WordPress",
+    "Drupal",
+    "ASP.NET",
+    "Ruby on Rails"
+ ]
+
+ const database = [
+    "MySQL",
+    "PostgreSQL",
+    "Oracle",
+    "ClickHous",
+    "MongoDB",
+    "CouchDB",
+    "PouchDB",
+    "CosmosDB",
+    "DynamoDB",
+    "MSSQL",
+    "RDS",
+    "Firestore"
+ ]
+
+ const cssFrameworks = [
+    "Bootstrap",
+    "Tailwind",
+    "Ant Design",
+    "Bulma",
+    "PostCSS",
+    "SCSS",
+    "LESS"
+ ]
+
+ const infrastructure = [
+    "AWS",
+    "GCP",
+    "Azure",
+    "Digital Ocean",
+    "Netlify",
+    "Heroku",
+    "Firebase",
+ ]
+
+ const devOpsAutomation = [
+    "Terraform",
+    "CloudFormation",
+    "Azure Bicep",
+    "Github Actions",
+    "AWS CodePipelline",
+    "Azure DevOps",
+    "Jenkins",
+    "Docker",
+    "Kubernetes",
+    "CloudWatch",
+    "Stackdriver",
+    "Azure Monitor"
+ ]
+
+ const messagingEventStreaming = [
+    "Kafka",
+    "RabbitMQ",
+    "AWS SQS/SNS",
+    "Google Pub/Sub",
+    "Azure Service Bus",
+ ]
+
+ export const skillCategories = [
+    { title: 'Languages', data: languages },
+    { title: 'Frontend', data: frontend },
+    { title: 'Backend', data: backend },
+    { title: 'Database', data: database },
+    { title: 'Mobile', data: mobile },
+    { title: 'CSS Frameworks', data: cssFrameworks },
+    { title: 'Infrastructure', data: infrastructure },
+    { title: 'DevOps & Automation', data: devOpsAutomation },
+    { title: 'Messaging/Event Streaming', data: messagingEventStreaming }
+];
+
  export const skillsData = [
     'HTML',
     'CSS',
