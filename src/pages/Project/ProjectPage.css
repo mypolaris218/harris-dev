@@ -43,7 +43,9 @@
 
 .project-grid {
     display: flex;
-    gap: 4rem; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
 @media (min-width: 992px) and (max-width: 1380px) {
@@ -60,7 +62,7 @@
     }
 
     .project-grid {
-        gap: 3rem;
+        gap: 2rem;
     }
 }
 

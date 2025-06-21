@@ -53,6 +53,7 @@
 .expcard-img > img {
     width: 36px;
     pointer-events: none;
+    opacity: 0.7;
 }
 
 .experience-details {

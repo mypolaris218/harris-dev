@@ -28,13 +28,16 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
     const Icon = styled('span')(({ theme: muiTheme }) => ({
         fontSize: '1.1rem',
         transition: 'all 0.2s',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     }));
 
     return (
         <motion.div
             key={id}
             className='singleProject'
-            style={{ backgroundColor: theme.primary400 }}
+            style={{ backgroundColor: theme.primary50 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,7 +71,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                             />
                         </Icon>
                     </IconButton>
-                    <IconButton
+                    {/* <IconButton
                         href={code}
                         target='_blank'
                         rel='noreferrer'
@@ -86,7 +89,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                                 aria-label='Code'
                             />
                         </Icon>
-                    </IconButton>
+                    </IconButton> */}
                 </div>
             </div>
             <p
