@@ -1,5 +1,6 @@
-import React,{ useContext } from 'react';
+import React, { useContext } from 'react';
 import Marquee from "react-fast-marquee";
+import { Box, Typography, Card, CardContent } from '@mui/material';
 
 import './Skills.css'
 
@@ -8,7 +9,6 @@ import { skillsData } from '../../data/skillsData'
 import { skillsImage } from '../../utils/skillsImage'
 
 function Skills() {
-
     const { theme } = useContext(ThemeContext);
 
     const skillBoxStyle = {
@@ -17,12 +17,20 @@ function Skills() {
     }
 
     return (
-        <div className="skills" style={{backgroundColor: theme.secondary}}>
-            <div className="skillsHeader">
-                <h2 style={{color: theme.primary}}>Skills</h2>
-            </div>
-            <div className="skillsContainer">
-                <div className="skill--scroll">
+        <Box className="skills" sx={{ backgroundColor: theme.secondary }}>
+            <Box className="skillsHeader">
+                <Typography variant="h2" sx={{ 
+                    color: theme.primary,
+                    fontFamily: 'var(--primaryFont)',
+                    fontWeight: 'bold',
+                    fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+                    textAlign: 'center'
+                }}>
+                    Skills
+                </Typography>
+            </Box>
+            <Box className="skillsContainer">
+                <Box className="skill--scroll">
                     <Marquee 
                         gradient={false} 
                         speed={80} 
@@ -33,17 +41,19 @@ function Skills() {
                         direction="left"
                     >
                         {skillsData.map((skill, id) => (
-                            <div className="skill--box" key={id} style={skillBoxStyle}>
-                                <img src={skillsImage(skill)} alt={skill} />
-                                <h3 style={{color: theme.tertiary}}>
-                                    {skill}
-                                </h3>
-                            </div>
+                            <Card className="skill--box" key={id} sx={skillBoxStyle} elevation={0}>
+                                <CardContent className="skill-card-content">
+                                    <img src={skillsImage(skill)} alt={skill} />
+                                    <h3 style={{ color: theme.tertiary }}>
+                                        {skill}
+                                    </h3>
+                                </CardContent>
+                            </Card>
                         ))}
                     </Marquee>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     )
 }
 

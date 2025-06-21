@@ -1,3 +1,120 @@
+ export const languages = [
+    "C/C++",
+    "MFC",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "PHP",
+    "C#",
+    "Go",
+    "Ruby"
+ ];
+
+ export const frontend = [
+    "React",
+    "Next.js",
+    "Gatsby",
+    "Angular",
+    "Vue",
+    "Ember",
+    "Lit",
+    "Svelte",
+    "Redux",
+    "Mobx",
+    "Zustand",
+    "Context",
+    "React Hooks",
+    "VueX",
+    "Vuetify",
+    "RxJS",
+    "NgRx",
+ ]
+
+ export const mobile = [
+    "Android",
+    "iOS",
+    "Android Studio",
+    "Xcode",
+    "Objective-C",
+    "Swift",
+    "Kotlin",
+    "React Native",
+    "Flutter",
+ ]
+
+ export const backend = [
+    "Node.js",
+    "Express",
+    "NestJS",
+    "Fastify",
+    "Django",
+    "Flask",
+    "FastAPI",
+    "Laravel",
+    "Symfony",
+    "WordPress",
+    "Drupal",
+    "ASP.NET",
+    "Ruby on Rails"
+ ]
+
+ export const database = [
+    "MySQL",
+    "PostgreSQL",
+    "Oracle",
+    "ClickHous",
+    "MongoDB",
+    "CouchDB",
+    "PouchDB",
+    "CosmosDB",
+    "DynamoDB",
+    "MSSQL",
+    "RDS",
+    "Firestore"
+ ]
+
+ export const cssFrameworks = [
+    "Bootstrap",
+    "Tailwind",
+    "Ant Design",
+    "Bulma",
+    "PostCSS",
+ ]
+
+ export const infrastructure = [
+    "AWS",
+    "GCP",
+    "Azure",
+    "Digital Ocean",
+    "Netlify",
+    "Heroku",
+    "Firebase",
+ ]
+
+ export const devOpsAutomation = [
+    "Terraform",
+    "CloudFormation",
+    "Azure Bicep",
+    "Github Actions",
+    "AWS CodePipelline",
+    "Azure DevOps",
+    "Jenkins",
+    "Docker",
+    "Kubernetes",
+    "CloudWatch",
+    "Stackdriver",
+    "Azure Monitor"
+ ]
+
+ export const messagingEventStreaming = [
+    "Kafka",
+    "RabbitMQ",
+    "AWS SQS/SNS",
+    "Google Pub/Sub",
+    "Azure Service Bus",
+ ]
+
  export const skillsData = [
     'HTML',
     'CSS',
