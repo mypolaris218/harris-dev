@@ -90,7 +90,7 @@ function Navbar() {
         height: '60px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'flex-start',
         padding: '0 30px',
         boxSizing: 'border-box',
         border: '2px solid',
@@ -109,7 +109,6 @@ function Navbar() {
 
     const DrawerLink = styled('span')(({ theme: muiTheme }) => ({
         fontFamily: 'var(--primaryFont)',
-        width: '50%',
         fontSize: '1.3rem',
         fontWeight: 600,
         '@media (max-width: 960px)': {
@@ -119,8 +118,10 @@ function Navbar() {
 
     const DrawerIcon = styled('span')(({ theme: muiTheme }) => ({
         fontSize: '1.6rem',
+        marginRight: '15px',
         '@media (max-width: 960px)': {
             fontSize: '1.385rem',
+            marginRight: '12px',
         },
     }));
 
@@ -137,6 +138,16 @@ function Navbar() {
         hidden: { opacity: 0, x: -20 },
         visible: { opacity: 1, x: 0 }
     };
+
+    const navigationItems = [
+        { key: 'home', to: '/', icon: <IoHomeSharp />, label: 'Home', delay: 0.1 },
+        { key: 'about', to: '/#about', icon: <FaUser />, label: 'About', delay: 0.2 },
+        { key: 'education', to: '/#education', icon: <HiDocumentText />, label: 'Education', delay: 0.3 },
+        { key: 'skills', to: '/#skills', icon: <BsFillGearFill />, label: 'Skills', delay: 0.4 },
+        { key: 'experience', to: '/#experience', icon: <FaUser />, label: 'Experience', delay: 0.5 },
+        { key: 'projects', to: '/#projects', icon: <FaFolderOpen />, label: 'Projects', delay: 0.6 },
+        { key: 'contacts', to: '/#contacts', icon: <MdPhone />, label: 'Contact', delay: 0.7 }
+    ];
 
     return (
         <div className='navbar'>
@@ -183,125 +194,28 @@ function Navbar() {
                 <div onClick={handleDrawerClose}>
                     <div className='navLink--container'>
                         <AnimatePresence>
-                            <MotionNavLink
-                                to='/'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.1 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <IoHomeSharp />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        Home
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
-
-                            <MotionNavLink
-                                to='/#about'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.2 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <FaUser />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        About
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
-
-                            <MotionNavLink
-                                to='/#resume'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.3 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <HiDocumentText />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        Resume
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
-
-                            <MotionNavLink
-                                to='/#services'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.4 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <BsFillGearFill />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        Services
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
-
-                            <MotionNavLink
-                                to='/#projects'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.5 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <FaFolderOpen />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        Projects
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
-
-                            <MotionNavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                                variants={navItemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ duration: 0.3, delay: 0.6 }}
-                            >
-                                <DrawerItem>
-                                    <DrawerIcon>
-                                        <MdPhone />
-                                    </DrawerIcon>
-                                    <DrawerLink>
-                                        Contact
-                                    </DrawerLink>
-                                </DrawerItem>
-                            </MotionNavLink>
+                            {navigationItems.map((item) => (
+                                <MotionNavLink
+                                    key={item.key}
+                                    to={item.to}
+                                    smooth={true}
+                                    spy='true'
+                                    duration={2000}
+                                    variants={navItemVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    transition={{ duration: 0.3, delay: item.delay }}
+                                >
+                                    <DrawerItem>
+                                        <DrawerIcon>
+                                            {item.icon}
+                                        </DrawerIcon>
+                                        <DrawerLink>
+                                            {item.label}
+                                        </DrawerLink>
+                                    </DrawerItem>
+                                </MotionNavLink>
+                            ))}
                         </AnimatePresence>
                     </div>
                 </div>

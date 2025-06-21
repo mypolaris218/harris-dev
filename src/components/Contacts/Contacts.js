@@ -67,14 +67,14 @@ function Contacts() {
                     message: message,
                 };
 
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    setSuccess(true);
-                    setErrMsg('');
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
-                });
+                // axios.post(contactsData.sheetAPI, responseData).then((res) => {
+                //     setSuccess(true);
+                //     setErrMsg('');
+                //     setName('');
+                //     setEmail('');
+                //     setMessage('');
+                //     setOpen(false);
+                // });
             } else {
                 setErrMsg('Invalid email');
                 setOpen(true);
@@ -87,28 +87,62 @@ function Contacts() {
     
     const textFieldStyles = {
         '& label.Mui-focused': {
-            color: theme.primary,
+            color: theme.secondary,
         },
         '& label': {
             fontFamily: 'var(--primaryFont)',
-            color: theme.primary,
+            color: theme.secondary,
         },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: theme.primary80,
-            },
-            '&:hover fieldset': {
-                borderColor: theme.primary600,
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: theme.primary600,
-            },
+        '& .MuiInput-underline:before': {
+            borderBottomColor: 'gray'
+        },
+        '& .MuiInput-underline:hover:before': {
+            borderBottomColor: 'black',
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: 'white', // focused color
+        },
+        '& .MuiInputLabel-root': {
+            color: 'gray'
         },
         '& .MuiInputBase-input': {
-            color: theme.tertiary,
+            color: theme.secondary,
             fontFamily: 'var(--primaryFont)'
         }
     };
+
+    const formFields = [
+        {
+            key: 'name',
+            label: 'Name',
+            value: name,
+            onChange: (e) => setName(e.target.value),
+            placeholder: 'John Doe',
+            type: 'text',
+            multiline: false,
+            rows: undefined
+        },
+        {
+            key: 'email',
+            label: 'Email',
+            value: email,
+            onChange: (e) => setEmail(e.target.value),
+            placeholder: 'John@doe.com',
+            type: 'email',
+            multiline: false,
+            rows: undefined
+        },
+        {
+            key: 'message',
+            label: 'Message',
+            value: message,
+            onChange: (e) => setMessage(e.target.value),
+            placeholder: 'Type your message....',
+            type: 'text',
+            multiline: true,
+            rows: 4
+        }
+    ];
 
     const SocialIcon = styled('div')(({ theme: muiTheme }) => ({
         width: '45px',
@@ -118,8 +152,8 @@ function Contacts() {
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: '21px',
-        backgroundColor: theme.primary,
-        color: theme.secondary,
+        backgroundColor: theme.secondary,
+        color: theme.primary,
         transition: '250ms ease-in-out',
         '&:hover': {
             transform: 'scale(1.1)',
@@ -129,8 +163,8 @@ function Contacts() {
     }));
 
     const DetailsIcon = styled('div')(({ theme: muiTheme }) => ({
-        backgroundColor: theme.primary,
-        color: theme.secondary,
+        backgroundColor: theme.secondary,
+        color: theme.primary,
         borderRadius: '50%',
         width: '45px',
         height: '45px',
@@ -142,7 +176,7 @@ function Contacts() {
         flexShrink: 0,
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
         '&:hover': {
-            transform: 'translateY(-5px)',
+            transform: 'translateY(-5px) scale(1.1)',
             boxShadow: '0px 7px 15px rgba(0, 0, 0, 0.3)',
             backgroundColor: theme.tertiary,
             color: theme.secondary,
@@ -153,13 +187,13 @@ function Contacts() {
         <Box
             className='contacts'
             id='contacts'
-            sx={{ backgroundColor: theme.secondary, p: 3 }}
+            sx={{ backgroundColor: theme.primary, p: 3 }}
         >
             <Box className='contacts--container'>
                 <Typography 
                     variant="h2" 
                     sx={{ 
-                        color: theme.primary,
+                        color: theme.secondary,
                         fontFamily: 'var(--primaryFont)',
                         fontWeight: 'bold',
                         fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
@@ -172,39 +206,23 @@ function Contacts() {
                 <Grid container spacing={5} justifyContent="center" alignItems="flex-start">
                     <Grid item xs={12} md={6}>
                         <Box component="form" onSubmit={handleContactForm} className='contacts-form'>
-                            <TextField
-                                fullWidth
-                                label="Name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="John Doe"
-                                variant="outlined"
-                                margin="normal"
-                                sx={textFieldStyles}
-                            />
-                            <TextField
-                                fullWidth
-                                label="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="John@doe.com"
-                                type="email"
-                                variant="outlined"
-                                margin="normal"
-                                sx={textFieldStyles}
-                            />
-                            <TextField
-                                fullWidth
-                                multiline
-                                rows={4}
-                                label="Message"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                placeholder="Type your message...."
-                                variant="outlined"
-                                margin="normal"
-                                sx={textFieldStyles}
-                            />
+                            {formFields.map(field => (
+                                <TextField
+                                    key={field.key}
+                                    fullWidth
+                                    label={field.label}
+                                    value={field.value}
+                                    onChange={field.onChange}
+                                    multiline={field.multiline}
+                                    rows={field.rows}
+                                    variant="standard"
+                                    margin="dense"
+                                    sx={{
+                                        ...textFieldStyles,
+                                        mb: 3
+                                    }}
+                                />
+                            ))}
 
                             <Box className='submit-btn' sx={{ mt: 2 }}>
                                 <Button
@@ -215,11 +233,12 @@ function Contacts() {
                                         success ? <AiOutlineCheckCircle /> : <AiOutlineSend />
                                     }
                                     sx={{
-                                        backgroundColor: theme.primary,
-                                        color: theme.secondary,
+                                        backgroundColor: theme.secondary,
+                                        color: theme.primary,
                                         fontFamily: 'var(--primaryFont)',
                                         '&:hover': {
                                             backgroundColor: theme.tertiary,
+                                            color: theme.secondary,
                                         },
                                         padding: '0.7rem 1.8rem'
                                     }}
@@ -239,11 +258,12 @@ function Contacts() {
                                         className='personal-details'
                                         target={!detail.prefix ? '_blank' : '_self'}
                                         rel={!detail.prefix ? 'noreferrer' : ''}
+                                        underline='none'
                                     >
                                         <DetailsIcon>
                                             <detail.Icon />
                                         </DetailsIcon>
-                                        <p style={{ color: theme.tertiary }}>
+                                        <p style={{ color: theme.secondary }}>
                                             {detail.text}
                                         </p>
                                     </Link>
@@ -253,7 +273,7 @@ function Contacts() {
                                  <DetailsIcon>
                                      <HiOutlineLocationMarker />
                                  </DetailsIcon>
-                                 <p style={{ color: theme.tertiary }}>
+                                 <p style={{ color: theme.secondary }}>
                                      {contactsData.address}
                                  </p>
                              </div>
@@ -276,6 +296,22 @@ function Contacts() {
                          </Box>
                     </Grid>
                 </Grid>
+                <Box
+                    component="img"
+                    src={theme.contactsimg}
+                    alt="contact"
+                    className="contacts--img"
+                    sx={{
+                        position: 'absolute',
+                        right: 0,
+                        bottom: 0,
+                        width: { xs: 0, md: '280px' },
+                        pointerEvents: 'none',
+                        '@media (min-width: 992px) and (max-width: 1380px)': {
+                            width: '240px'
+                        }
+                    }}
+                />
                 <Snackbar
                     anchorOrigin={{
                         vertical: 'top',
