@@ -3,23 +3,23 @@ import { Button } from '@mui/material';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { styled } from '@mui/material/styles';
 
-import './Landing.css';
+import {
+    FaLinkedin,
+    FaGithub,
+} from 'react-icons/fa';
+
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
-
-import {
-    FaTwitter,
-    FaLinkedin,
-    FaGithub,
-    FaYoutube,
-    FaBlogger,
-    FaWhatsapp,
-    FaPhone
-} from 'react-icons/fa';
+import './Landing.css';
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
+
+    const socialIcons = {
+        linkedIn: <FaLinkedin className='landing--social' style={{ color: theme.secondary }} aria-label='LinkedIn' size={30} />,
+        github: <FaGithub className='landing--social' style={{ color: theme.secondary }} aria-label='GitHub' size={30} />,
+    };
 
     const ResumeButton = styled(Button)(({ theme: muiTheme }) => ({
         color: theme.primary,
@@ -74,29 +74,13 @@ function Landing() {
                     style={{ backgroundColor: theme.primary }}
                 >
                     <div className='lcl--content'>
-                        {socialsData.linkedIn && (
-                            <a href={socialsData.linkedIn} target='_blank' rel='noreferrer'>
-                                <FaLinkedin 
-                                    className='landing--social' 
-                                    style={{ color: theme.secondary }} 
-                                    aria-label='LinkedIn'
-                                    size={30}
-                                />
-                            </a>
-                        )}
-                        {socialsData.github && (
-                            <a
-                                href={socialsData.github}
-                                target='_blank'
-                                rel='noreferrer'
-                            >
-                                <FaGithub
-                                    className='landing--social'
-                                    style={{ color: theme.secondary }}
-                                    aria-label='GitHub'
-                                />
-                            </a>
-                        )}
+                        {Object.entries(socialsData).map(([key, value]) => (
+                            socialIcons[key] && (
+                                <a key={value} href={value} target='_blank' rel='noreferrer'>
+                                    {socialIcons[key]}
+                                </a>
+                            )
+                        ))}
                     </div>
                 </div>
                 <img
@@ -121,7 +105,7 @@ function Landing() {
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>
-                            {headerData.resumePdf && (
+                            {/* {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
                                     download='resume'
@@ -132,7 +116,7 @@ function Landing() {
                                         Download CV
                                     </ResumeButton>
                                 </a>
-                            )}
+                            )} */}
                             <NavLink
                                 to='/#contacts'
                                 smooth={true}
