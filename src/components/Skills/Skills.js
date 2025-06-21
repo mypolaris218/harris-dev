@@ -17,7 +17,7 @@ function Skills() {
     }
 
     return (
-        <Box className="skills" sx={{ backgroundColor: theme.secondary }}>
+        <Box className="skills" id="skills" sx={{ backgroundColor: theme.secondary }}>
             <Box className="skillsHeader">
                 <Typography variant="h2" sx={{ 
                     color: theme.primary,
@@ -44,17 +44,29 @@ function Skills() {
                             <Grid item key={category.title}>
                                 <Card sx={{ ...skillBoxStyle, width: 300, height: '100%' }} elevation={0}>
                                     <CardContent sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                        <Typography variant='h5' component='div' className="skill-card-title" sx={{ color: theme.tertiary }}>
+                                        <Typography variant='h5' component='div' className="skill-card-title" sx={{ 
+                                            color: theme.tertiary,
+                                            fontFamily: '"Big Shoulders Text", sans-serif',
+                                            fontWeight: 'bold'
+                                        }}>
                                             {category.title}
                                         </Typography>
                                         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
                                             <Grid container spacing={1} sx={{ p: 1 }}>
                                                 {category.data.map(skill => (
-                                                    <Grid item size={6} xs={6} key={skill} sx={{ justifyContent: "center", alignItems: "center"}}>
+                                                    <Grid item size={6} xs={6} key={skill} sx={{ 
+                                                        justifyContent: "center", 
+                                                        alignItems: "center",
+                                                        display: "flex"
+                                                    }}>
                                                         <Chip 
                                                             label={skill} 
                                                             avatar={<Avatar src={skillsImage(skill)} alt={skill} />}
-                                                            sx={{ width: '80%', justifyContent: 'flex-start' }}
+                                                            sx={{ 
+                                                                width: '80%', 
+                                                                justifyContent: 'flex-start',
+                                                                fontFamily: 'var(--primaryFont)'
+                                                            }}
                                                         />
                                                     </Grid>
                                                 ))}

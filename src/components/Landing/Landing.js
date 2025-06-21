@@ -83,15 +83,21 @@ function Landing() {
                         ))}
                     </div>
                 </div>
-                <img
-                    src={headerData.image}
-                    alt=''
+                <div
                     className='landing--img'
                     style={{
                         opacity: `${drawerOpen ? '0' : '1'}`,
                         borderColor: theme.secondary,
                     }}
-                />
+                >
+                    <img
+                        src={headerData.image}
+                        alt=''
+                        style={{
+                            borderColor: theme.secondary,
+                        }}
+                    />
+                </div>
                 <div
                     className='landing--container-right'
                     style={{ backgroundColor: theme.secondary }}
