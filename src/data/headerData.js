@@ -2,8 +2,8 @@ import resume from '../assets/pdf/resume.pdf'
 
 export const headerData = {
     name: 'Charalampos Sakellariou',
-    title: "Senior Full Stack Engineer",
-    desciption:"There wasn't a bird in the sky, but that was not what caught her attention. It was the clouds. The deep green that isn't the color of clouds, but came with these. She knew what was coming and she hoped she was prepared. ",
-    image: 'https://raw.githubusercontent.com/PhantomScript/asset-container/main/developer-portfolio/landingImg.png',
+    title: "Staff Software Engineer",
+    desciption:"There was no sound in the forest, but that wasn’t what made me stop. It was the light. A pale orange that didn’t belong to dusk, but filtered through the trees anyway. I had seen it once before, and the memory still felt like heat against her skin. I didn’t turn back, just listened and waited.",
+    image: 'https://raw.githubusercontent.com/mypolaris218/Pro-Portfolio/refs/heads/master/src/assets/png/face.jpg',
     resumePdf: resume
 }

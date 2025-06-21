@@ -36,93 +36,6 @@
 
 .contacts-body {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.contacts-form {
-    display: flex;
-    flex: 0.4;
-    width: 100%;
-}
-
-.contacts-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.input-container {
-    width: 100%;
-}
-
-
-.form-input {
-    height: 50px;
-    box-sizing: border-box;
-    border-radius: 50px; 
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%; 
-    resize: none;
-}
-
-
-
-.form-message {
-    height: 150px;
-    box-sizing: border-box;
-    border-radius: 50px; 
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%;
-    resize: none;
-}
-
-
-
-.submit-btn button {
-    border: none;
-    outline: none;
-    width: 140px;
-    height: 50px;
-    border-radius: 50px;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-}
-
-.submit-btn button p {
-    font-size: 16px;
-    font-family: var(--primaryFont);
-}
-
-.submit-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-.send-icon {
-    font-size: 25px;
-    transform-origin: center;
-    transform: translate(5px,-3px) rotate(-30deg);
-}
-
-.success-icon {
-    font-size: 28px;
-    transition: all 0.3s 0.8s ease-in-out;
 }
 
 .contacts-details {
@@ -130,43 +43,41 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    flex: 0.6;
-    box-sizing: border-box;
-    padding-left: 7rem;
-    margin-top: 1.2rem;
+    padding-left: 4rem;
+    height: 100%;
 }
-
-
 
 .personal-details {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
     width: 100%;
-    margin-bottom: 2.5rem;
+    color: var(--clr-primary);
+    text-decoration: none;
 }
 
 .personal-details p {
-    margin-left: 1.5rem;
-    font-size: 18px;
-    line-height: 110%;
-    font-weight: 500;
+    font-size: 1.1rem;
     font-family: var(--primaryFont);
-    width: 45%;
+    font-weight: 500;
     word-break: break-word;
 }
 
 .socialmedia-icons {
-    width: 90%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     gap: 1.5rem;
-    margin-top: 4rem;
+    flex-wrap: wrap;
 }
 
+.send-btn {
+    border-radius: 50px !important;
+    transition: transform 250ms ease-in-out !important;
+}
+
+.send-btn:hover {
+    transform: scale(1.05);
+}
 
 @media (min-width: 992px) and (max-width: 1380px) {
     .contacts--img {
@@ -219,18 +130,6 @@
         flex-direction: column;
         align-items: center;
     }
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 80%;
-    }
-    
-    .form-input {
-        margin-bottom: 0.45rem;
-    }
-    .contacts-form form {
-        align-items: flex-end;
-    }
     .contacts-details {
         padding-left: 0rem;
         padding: 1rem;
@@ -252,11 +151,6 @@
 }
 
 @media screen and (max-width: 600px) {
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 100%;
-    }
     .contacts--container h1 {
         font-size: 2.5rem;
         margin-bottom: 20px;
