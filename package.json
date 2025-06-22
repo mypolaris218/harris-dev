@@ -2,7 +2,7 @@
   "name": "developer-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mypolaris218.github.io/Pro-Portfolio",
+  "homepage": "https://mypolaris218.github.io/harris-dev",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
