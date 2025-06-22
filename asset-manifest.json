@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/harris-dev/static/css/main.165b274a.css",
-    "main.js": "/harris-dev/static/js/main.8aa31d2c.js",
-    "static/js/488.04507656.chunk.js": "/harris-dev/static/js/488.04507656.chunk.js",
+    "main.js": "/harris-dev/static/js/main.0bb7a4d5.js",
+    "static/js/488.5e1275ec.chunk.js": "/harris-dev/static/js/488.5e1275ec.chunk.js",
     "static/media/placeholder.png": "/harris-dev/static/media/placeholder.3fcbbdcd05f3e458d129.png",
     "static/media/expOrange.svg": "/harris-dev/static/media/expOrange.9383b2df918bf4e0ce67e3f289602562.svg",
     "static/media/expGreen.svg": "/harris-dev/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
@@ -83,8 +83,8 @@
     "static/media/graphql.svg": "/harris-dev/static/media/graphql.be1dc316bda193f2a2d7b64b75ca70c5.svg",
     "static/media/cplusplus.svg": "/harris-dev/static/media/cplusplus.3398ef505c35b160f8f737a0555dd38d.svg",
     "static/media/svelte.svg": "/harris-dev/static/media/svelte.7b116dd53bc0e9ed7b16e6fef029308c.svg",
-    "index.html": "/harris-dev/index.html",
     "static/media/microsoftoffice.svg": "/harris-dev/static/media/microsoftoffice.c3a1f4f1a4b45604542ec493ff02aefa.svg",
+    "index.html": "/harris-dev/index.html",
     "static/media/csharp.svg": "/harris-dev/static/media/csharp.8f35e178457770eb2706e509cfd5522a.svg",
     "static/media/java.svg": "/harris-dev/static/media/java.d004bc17bfb68228540d36c37e6eb811.svg",
     "static/media/azure.svg": "/harris-dev/static/media/azure.a4419965d19b7d2ed2dd0fe503e54cc9.svg",
@@ -144,11 +144,11 @@
     "static/media/vuetifyjs.svg": "/harris-dev/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/harris-dev/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
     "main.165b274a.css.map": "/harris-dev/static/css/main.165b274a.css.map",
-    "main.8aa31d2c.js.map": "/harris-dev/static/js/main.8aa31d2c.js.map",
-    "488.04507656.chunk.js.map": "/harris-dev/static/js/488.04507656.chunk.js.map"
+    "main.0bb7a4d5.js.map": "/harris-dev/static/js/main.0bb7a4d5.js.map",
+    "488.5e1275ec.chunk.js.map": "/harris-dev/static/js/488.5e1275ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.165b274a.css",
-    "static/js/main.8aa31d2c.js"
+    "static/js/main.0bb7a4d5.js"
   ]
 }
