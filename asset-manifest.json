@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/harris-dev/static/css/main.165b274a.css",
-    "main.js": "/harris-dev/static/js/main.78ee873e.js",
+    "main.js": "/harris-dev/static/js/main.d0bde73b.js",
     "static/js/488.5e1275ec.chunk.js": "/harris-dev/static/js/488.5e1275ec.chunk.js",
     "static/media/placeholder.png": "/harris-dev/static/media/placeholder.3fcbbdcd05f3e458d129.png",
     "static/media/expOrange.svg": "/harris-dev/static/media/expOrange.9383b2df918bf4e0ce67e3f289602562.svg",
@@ -144,11 +144,11 @@
     "static/media/vuetifyjs.svg": "/harris-dev/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/harris-dev/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
     "main.165b274a.css.map": "/harris-dev/static/css/main.165b274a.css.map",
-    "main.78ee873e.js.map": "/harris-dev/static/js/main.78ee873e.js.map",
+    "main.d0bde73b.js.map": "/harris-dev/static/js/main.d0bde73b.js.map",
     "488.5e1275ec.chunk.js.map": "/harris-dev/static/js/488.5e1275ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.165b274a.css",
-    "static/js/main.78ee873e.js"
+    "static/js/main.d0bde73b.js"
   ]
 }
