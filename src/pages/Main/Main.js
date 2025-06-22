@@ -1,10 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-
+import { usePageTracking } from '../../utils/GATracking'
 import { Navbar, Footer, Landing, About, Skills, Testimonials, Blog, Education, Experience, Contacts, Projects, Services, Achievement } from '../../components'
 import { headerData } from '../../data/headerData'
 
 function Main() {
+    usePageTracking();
+    
     return (
         <div>
             <Helmet>

@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import TagManager from 'react-gtm-module';
+
 
 import { ThemeContext } from './contexts/ThemeContext';
 import { Main, BlogPage, ProjectPage } from './pages'
@@ -8,6 +10,12 @@ import { BackToTop } from './components'
 import ScrollToTop from './utils/ScrollToTop'
 
 import './App.css'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-5WSDC94K',
+}
+
+TagManager.initialize(tagManagerArgs);
 
 function App() {
 
