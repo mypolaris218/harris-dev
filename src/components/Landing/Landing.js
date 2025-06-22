@@ -67,6 +67,15 @@ function Landing() {
         },
     }));
 
+    const handleContactClick = () => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'button_click',
+            button_name: "Contact",
+            button_location: "Landing Page",
+        })
+    }
+
     return (
         <div className='landing'>
             <div className='landing--container'>
@@ -130,7 +139,7 @@ function Landing() {
                                 spy='true'
                                 duration={2000}
                             >
-                                <ContactButton>
+                                <ContactButton onClick={handleContactClick()}>
                                     Contact
                                 </ContactButton>
                             </NavLink>
