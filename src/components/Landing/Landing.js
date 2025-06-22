@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { Button } from '@mui/material';
+import React, { useContext, useEffect } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
 import {
     FaLinkedin,
     FaGithub,
@@ -13,7 +12,9 @@ import { headerData } from '../../data/headerData';
 import { socialsData } from '../../data/socialsData';
 import './Landing.css';
 
+
 function Landing() {
+
     const { theme, drawerOpen } = useContext(ThemeContext);
 
     const socialIcons = {

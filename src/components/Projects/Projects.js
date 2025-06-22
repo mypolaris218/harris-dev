@@ -6,9 +6,11 @@ import { HiArrowRight } from "react-icons/hi";
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
 import SingleProject from './SingleProject/SingleProject';
+import { usePageTracking } from '../../utils/GATracking';
 import './Projects.css'
 
 function Projects() {
+    usePageTracking();
     const { theme } = useContext(ThemeContext);
 
     const ViewAllButton = styled('button')(({ theme: muiTheme }) => ({
