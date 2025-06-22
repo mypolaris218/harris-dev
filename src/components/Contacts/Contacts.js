@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Snackbar, IconButton, Alert, Box, Typography, Grid, TextField, Button, Link, Paper } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import axios from 'axios';
+import { Snackbar, Alert, Box, Typography, Grid, TextField, Button, Link, Paper } from '@mui/material';
+// import CloseIcon from '@mui/icons-material/Close';
+// import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
 import {
     FaTwitter, FaLinkedinIn, FaGithub, FaYoutube, FaBloggerB, FaRedditAlien, FaStackOverflow, FaCodepen, FaInstagram, FaGitlab, FaMediumM, FaWhatsapp, FaTelegramPlane,
