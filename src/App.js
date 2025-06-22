@@ -20,7 +20,7 @@ function App() {
   return (
     <HelmetProvider>
       <div className="app">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Main />} />
