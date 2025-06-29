@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/harris-dev/static/css/main.165b274a.css",
-    "main.js": "/harris-dev/static/js/main.d0bde73b.js",
+    "main.js": "/harris-dev/static/js/main.253c4ea5.js",
     "static/js/488.5e1275ec.chunk.js": "/harris-dev/static/js/488.5e1275ec.chunk.js",
     "static/media/placeholder.png": "/harris-dev/static/media/placeholder.3fcbbdcd05f3e458d129.png",
     "static/media/expOrange.svg": "/harris-dev/static/media/expOrange.9383b2df918bf4e0ce67e3f289602562.svg",
@@ -19,6 +19,7 @@
     "static/media/tune.png": "/harris-dev/static/media/tune.c20abe07da1d00274a65.png",
     "static/media/samewavesurf.avif": "/harris-dev/static/media/samewavesurf.8c7d73aeab0267496060.avif",
     "static/media/BestermindRegular.ttf": "/harris-dev/static/media/BestermindRegular.e58a192233afb30a6a59.ttf",
+    "static/media/ember.svg": "/harris-dev/static/media/ember.4dbc6c0e5a33f42483c009f9b0a4d24a.svg",
     "static/media/ucarehq.webp": "/harris-dev/static/media/ucarehq.17b879691e70ee907383.webp",
     "static/media/stackwell.png": "/harris-dev/static/media/stackwell.6390562271868904624d.png",
     "static/media/contactsBlack.svg": "/harris-dev/static/media/contactsBlack.888fb5429daafbdcf2e79d16adf73902.svg",
@@ -62,6 +63,7 @@
     "static/media/eduRed.svg": "/harris-dev/static/media/eduRed.55e01742a44cc9a284abde6548b111f2.svg",
     "static/media/eduBlack.svg": "/harris-dev/static/media/eduBlack.ffbd9a234cc9aed5364ab3f5397baf2e.svg",
     "static/media/boy2.svg": "/harris-dev/static/media/boy2.ece5c0808fbc8b9d887d3b992c321971.svg",
+    "static/media/kafka.svg": "/harris-dev/static/media/kafka.264249ed4c60be518e5b070ed91d5d97.svg",
     "static/media/boy1.svg": "/harris-dev/static/media/boy1.f9c177c8c6e6da4aa2fa3ab0d8a74767.svg",
     "static/media/gimp.svg": "/harris-dev/static/media/gimp.7cff4c0417007aaae47bb028d6052d46.svg",
     "static/media/memsql.svg": "/harris-dev/static/media/memsql.aecce246bdc1886bb4dda5f63fc75c9e.svg",
@@ -136,19 +138,22 @@
     "static/media/html.svg": "/harris-dev/static/media/html.6a342d61e4fe710cf3e5c05b65b0ac87.svg",
     "static/media/strapi.svg": "/harris-dev/static/media/strapi.ac0a6e671569cdfe3016a823859aeca2.svg",
     "static/media/markdown.svg": "/harris-dev/static/media/markdown.62e50cf06ec416c71d7b81a472d33f21.svg",
+    "static/media/gatsby.svg": "/harris-dev/static/media/gatsby.caaf07daa6c76671ee20361af9e1cedc.svg",
     "static/media/pytorch.svg": "/harris-dev/static/media/pytorch.1862724d640acf306a357d95ec5d42e7.svg",
     "static/media/figma.svg": "/harris-dev/static/media/figma.1cd446080336901b93673164fe5bdcf2.svg",
     "static/media/angular.svg": "/harris-dev/static/media/angular.d4cb4fa5908f614ceb0969ed92e02f9c.svg",
     "static/media/materialui.svg": "/harris-dev/static/media/materialui.518da2c04cdbcf8b4ca3e2ac554c38e9.svg",
+    "static/media/mfc.svg": "/harris-dev/static/media/mfc.c5026cbef0e35c4c1c9834c7d04c3ade.svg",
+    "static/media/lit.svg": "/harris-dev/static/media/lit.9f194f9c326e327bb29ac412143ec1eb.svg",
     "static/media/vue.svg": "/harris-dev/static/media/vue.47bdfb5a7a54d8ade2aa4c61d5148668.svg",
     "static/media/vuetifyjs.svg": "/harris-dev/static/media/vuetifyjs.8a22a3ec81ad62e97094feab6e7ee0fb.svg",
     "static/media/bulma.svg": "/harris-dev/static/media/bulma.5910d4416e077262d0264109649ab214.svg",
     "main.165b274a.css.map": "/harris-dev/static/css/main.165b274a.css.map",
-    "main.d0bde73b.js.map": "/harris-dev/static/js/main.d0bde73b.js.map",
+    "main.253c4ea5.js.map": "/harris-dev/static/js/main.253c4ea5.js.map",
     "488.5e1275ec.chunk.js.map": "/harris-dev/static/js/488.5e1275ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.165b274a.css",
-    "static/js/main.d0bde73b.js"
+    "static/js/main.253c4ea5.js"
   ]
 }
