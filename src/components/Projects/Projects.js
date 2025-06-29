@@ -39,6 +39,15 @@ function Projects() {
         }
     }));
 
+    const handleVieAllProjectClick = () => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'button_click',
+            button_text: "View All Projects",
+            button_location: "Projects Page",
+        })
+    }
+
     return (
         <>
             {projectsData.length > 0 && (
@@ -69,7 +78,7 @@ function Projects() {
                     {projectsData.length > 3 && (
                         <Box className="projects--viewAll">
                             <Link to="/projects">
-                                <ViewAllButton>
+                                <ViewAllButton onClick={() => handleVieAllProjectClick()}>
                                     View All
                                     <ViewArrow />
                                 </ViewAllButton>

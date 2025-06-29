@@ -71,8 +71,17 @@ function Landing() {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'button_click',
-            button_name: "Contact",
+            button_text: "Contact",
             button_location: "Landing Page",
+        })
+    }
+
+    const handleSocialClick = (value) => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'link_click',
+            link_text: value,
+            link_url: value,
         })
     }
 
@@ -86,7 +95,7 @@ function Landing() {
                     <div className='lcl--content'>
                         {Object.entries(socialsData).map(([key, value]) => (
                             socialIcons[key] && (
-                                <a key={value} href={value} target='_blank' rel='noreferrer'>
+                                <a key={value} href={value} target='_blank' rel='noreferrer' data-gtm-ignor="true" onClick={() => handleSocialClick(value)}>
                                     {socialIcons[key]}
                                 </a>
                             )
@@ -139,7 +148,7 @@ function Landing() {
                                 spy='true'
                                 duration={2000}
                             >
-                                <ContactButton onClick={handleContactClick()}>
+                                <ContactButton onClick={() => handleContactClick()}>
                                     Contact
                                 </ContactButton>
                             </NavLink>

@@ -63,7 +63,7 @@ const mobile = [
     "MySQL",
     "PostgreSQL",
     "Oracle",
-    "ClickHous",
+    "ClickHouse",
     "MongoDB",
     "CouchDB",
     "PouchDB",

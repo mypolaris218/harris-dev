@@ -19,6 +19,7 @@ function Navbar() {
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
+        
         setOpen(true);
         setHandleDrawer();
     };

@@ -6,7 +6,7 @@ import './Skills.css'
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { skillCategories } from '../../data/skillsData'
-import { skillsImage } from '../../utils/skillsImage'
+import { skillsImage, skillImageFunc } from '../../utils/skillsImage'
 
 function Skills() {
     const { theme } = useContext(ThemeContext);
@@ -53,7 +53,7 @@ function Skills() {
                                         </Typography>
                                         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
                                             <Grid container spacing={1} sx={{ p: 1 }}>
-                                                {category.data.map(skill => (
+                                                {category?.data?.map(skill => (
                                                     <Grid item size={6} xs={6} key={skill} sx={{ 
                                                         justifyContent: "center", 
                                                         alignItems: "center",

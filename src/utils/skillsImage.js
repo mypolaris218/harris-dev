@@ -11,7 +11,10 @@ import javascript from '../assets/svg/skills/javascript.svg'
 import nextJS from '../assets/svg/skills/nextJS.svg'
 import nuxtJS from '../assets/svg/skills/nuxtJS.svg'
 import react from '../assets/svg/skills/react.svg'
+import gatsby from '../assets/svg/skills/gatsby.svg'
 import svelte from '../assets/svg/skills/svelte.svg'
+import ember from '../assets/svg/skills/ember.svg'
+import lit from '../assets/svg/skills/lit.svg'
 import typescript from '../assets/svg/skills/typescript.svg'
 import vue from '../assets/svg/skills/vue.svg'
 import bootstrap from '../assets/svg/skills/bootstrap.svg'
@@ -27,6 +30,7 @@ import vitejs from '../assets/svg/skills/vitejs.svg'
 import vuetifyjs from '../assets/svg/skills/vuetifyjs.svg'
 import c from '../assets/svg/skills/c.svg'
 import cplusplus from '../assets/svg/skills/cplusplus.svg'
+import mfc from '../assets/svg/skills/mfc.svg'
 import csharp from '../assets/svg/skills/csharp.svg'
 import dart from '../assets/svg/skills/dart.svg'
 import go from '../assets/svg/skills/go.svg'
@@ -60,6 +64,7 @@ import webix from '../assets/svg/skills/webix.svg'
 import wordpress from '../assets/svg/skills/wordpress.svg'
 
 import azure from '../assets/svg/skills/azure.svg'
+import kafka from '../assets/svg/skills/kafka.svg'
 import blender from '../assets/svg/skills/blender.svg'
 import fastify from '../assets/svg/skills/fastify.svg'
 import figma from '../assets/svg/skills/figma.svg'
@@ -74,6 +79,106 @@ import unity from '../assets/svg/skills/unity.svg'
 import wolframalpha from '../assets/svg/skills/wolframalpha.svg'
 
 import canva from '../assets/svg/skills/canva.svg'
+
+// const skillImage = {
+//     cplusplus,
+//     mfc,
+//     java,
+//     javascript,
+//     typescript,
+//     python,
+//     php,
+//     csharp: csharp,
+//     go,
+//     ruby,
+//     react,
+//     nextJS,
+//     gatsby,
+//     vue,
+//     ember,
+//     lit,
+//     svelte,
+//     redux,
+//     mobx,
+//     zustand,
+//     context,
+//     react_hooks,
+//     vuex,
+//     vuetify,
+//     rxjs,
+//     ngrx,
+//     android,
+//     ios,
+//     android_studio,
+//     xcode,
+//     objectivec,
+//     swift,
+//     kotlin,
+//     react_native,
+//     flutter,
+//     node,
+//     express,
+//     nestJS,
+//     fastify,
+//     django,
+//     flask,
+//     fastAPI,
+//     laravel,
+//     symfony,
+//     wordpress,
+//     drupal,
+//     asp_net,
+//     ruby_on_rails,
+//     mysql,
+//     postgresql,
+//     oracle,
+//     clickhouse,
+//     mongodb,
+//     couchdb,
+//     pouchdb,
+//     cosmosdb,
+//     dynamodb,
+//     mssql,
+//     rds,
+//     firestore,
+//     bootstrap,
+//     tailwind,
+//     antdesign,
+//     bulma,
+//     postcss,
+//     scss,
+//     less,
+//     aws,
+//     gcp,
+//     azure,
+//     digital_ocean,
+//     netlify,
+//     heroku,
+//     firebase,
+//     terraform,
+//     cloudformation,
+//     azure_bicep,
+//     github_actions,
+//     aws_codepipeline,
+//     azure_devops,
+//     jenkins,
+//     docker,
+//     kubernetes,
+//     cloudwatch,
+//     stackdriver,
+//     azure_monitor,
+//     kafka,
+//     rabbitmq,
+//     aws_sqs_sns,
+//     google_pub_sub,
+//     azure_service_bus
+// }
+
+// export const skillImageFunc = (skill) => {
+//     console.log(skillID)
+//     const skillID = skill.toLowerCase();
+//     return skillImage[skillID]?. undefined
+// }
 
 export const skillsImage = (skill) => {
     const skillID = skill.toLowerCase();
